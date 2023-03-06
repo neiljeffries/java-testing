@@ -1,0 +1,39 @@
+2023-03-05 21:33:56,585 INFO o.s.b.StartupInfoLogger [restartedMain] Starting DemoApplication using Java 17.0.5 with PID 48328 (C:\DeveloperApps\github\java-testing\target\classes started by n_e_i in C:\DeveloperApps\github\java-testing)
+2023-03-05 21:33:56,593 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.0.4-SNAPSHOT, Spring v6.0.6
+2023-03-05 21:33:56,594 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-03-05 21:33:56,636 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-05 21:33:56,637 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-05 21:33:57,491 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-03-05 21:33:57,502 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:33:57,503 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-03-05 21:33:57,504 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-05 21:33:57,575 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-03-05 21:33:57,577 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 936 ms
+2023-03-05 21:33:57,883 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-03-05 21:33:57,892 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:33:57,913 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-05 21:33:57,923 INFO o.s.b.StartupInfoLogger [restartedMain] Started DemoApplication in 1.675 seconds (process running for 2.466)
+2023-03-05 21:37:21,374 INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-03-05 21:37:21,389 INFO o.a.j.l.DirectJDKLog [Thread-5] Pausing ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:37:21,391 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping service [Tomcat]
+2023-03-05 21:37:21,396 INFO o.a.j.l.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:37:21,398 INFO o.a.j.l.DirectJDKLog [Thread-5] Destroying ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:37:21,490 INFO o.s.b.StartupInfoLogger [restartedMain] Starting DemoApplication using Java 17.0.5 with PID 48328 (C:\DeveloperApps\github\java-testing\target\classes started by n_e_i in C:\DeveloperApps\github\java-testing)
+2023-03-05 21:37:21,492 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v3.0.4-SNAPSHOT, Spring v6.0.6
+2023-03-05 21:37:21,492 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-03-05 21:37:21,638 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-03-05 21:37:21,639 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:37:21,641 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-03-05 21:37:21,641 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-05 21:37:21,658 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-03-05 21:37:21,659 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 164 ms
+2023-03-05 21:37:21,712 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-03-05 21:37:21,715 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:37:21,718 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-05 21:37:21,722 INFO o.s.b.StartupInfoLogger [restartedMain] Started DemoApplication in 0.275 seconds (process running for 206.265)
+2023-03-05 21:37:21,725 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2023-03-05 21:38:50,451 INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-03-05 21:38:50,470 INFO o.a.j.l.DirectJDKLog [Thread-7] Pausing ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:38:50,472 INFO o.a.j.l.DirectJDKLog [Thread-7] Stopping service [Tomcat]
+2023-03-05 21:38:50,475 INFO o.a.j.l.DirectJDKLog [Thread-7] Stopping ProtocolHandler ["http-nio-8080"]
+2023-03-05 21:38:50,478 INFO o.a.j.l.DirectJDKLog [Thread-7] Destroying ProtocolHandler ["http-nio-8080"]
