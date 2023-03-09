@@ -1,56 +1,67 @@
 package com.example.demo.controller;
 
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
+import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import com.example.demo.classes.Student;
 import com.example.demo.interfaces.IStudentService;
 
-
-@ContextConfiguration(classes = StudentController.class)
-@WebMvcTest(controllers = StudentController.class)
 public class StudentControllerTests {
 
-    private static final Logger LOG = LoggerFactory.getLogger(StudentControllerTests.class);
+    private static final Logger LOG = LoggerFactory.getLogger(StudentController.class);
 
-    @Autowired
-    MockMvc mockMvc;
+    @Mock
+    private IStudentService studentService;
 
-    @MockBean
-    IStudentService studentService;
+    @InjectMocks
+    private StudentController studentController;
 
-    @Test
-    void getAllStudentsTest() throws Exception {
-        LOG.trace("This is a TRACE log");
-        LOG.debug("This is a DEBUG log");
-        LOG.info("This is an INFO log");
-        LOG.error("This is an ERROR log");
-        given(studentService.getAllStudents())
-                .willReturn(Arrays.asList(new Student(
-                        "Nik",
-                        "Devou",
-                        1234,
-                        "Eden Villa")));
-        mockMvc.perform(get("/api/students"))
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$[*].studentId").value(1234));
-                // .andDo(print());
-        verify(studentService).getAllStudents();
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
+    @Test
+    @DisplayName("Test get all students")
+    void testGetAllStudents() {
+        // Mock data
+        List<Student> studentList = Arrays.asList(
+                new Student("John", "McClane", 1123, "123 St, Nyc"),
+                new Student("Sarah", "Connor", 1124, "456 St, LA"));
+
+        // Mock service method
+        when(studentService.getAllStudents()).thenReturn(studentList);
+
+        // Call controller method
+        ResponseEntity<List<Student>> responseEntity = studentController.getAllStudents();
+
+        // Verify response status
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+
+        // Verify response body
+        List<Student> responseBody = responseEntity.getBody();
+        assertEquals(studentList.size(), responseBody.size());
+        assertEquals(studentList.get(0).getFirstName(), responseBody.get(0).getFirstName());
+        assertEquals(studentList.get(0).getLastName(), responseBody.get(0).getLastName());
+        assertEquals(studentList.get(0).getStudentId(), responseBody.get(0).getStudentId());
+        assertEquals(studentList.get(0).getAddress(), responseBody.get(0).getAddress());
+        assertEquals(studentList.get(1).getFirstName(), responseBody.get(1).getFirstName());
+        assertEquals(studentList.get(1).getLastName(), responseBody.get(1).getLastName());
+        assertEquals(studentList.get(1).getStudentId(), responseBody.get(1).getStudentId());
+        assertEquals(studentList.get(1).getAddress(), responseBody.get(1).getAddress());
+    }
 }

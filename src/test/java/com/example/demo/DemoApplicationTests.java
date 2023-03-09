@@ -14,6 +14,11 @@ class DemoApplicationTests {
 		assertThat(context).isNotNull();
 	}
 
+	@Test
+	public void main() {
+		DemoApplication.main(new String[] {});
+	}
+
 
 
 }

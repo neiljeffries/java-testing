@@ -1,50 +1,40 @@
 package com.example.demo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
+import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import com.example.demo.classes.Student;
 import com.example.demo.dao.StudentDao;
-import com.example.demo.interfaces.IStudentService;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration
 public class StudentServiceTests {
 
-    @MockBean
-    StudentDao studentDao;
+    @Mock
+    private StudentDao studentDao;
 
-    @Autowired
-    IStudentService studentService;
+    @InjectMocks
+    private StudentService studentService;
 
-    @Configuration
-    public static class Config {
-        @Bean
-        public IStudentService getStudentService() {
-            return new StudentService();
-        }
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    void getAllStudentsTest() {
-        Student student = new Student(
-                "John",
-                "Fury",
-                4321,
-                "RedView Towers");
-        given(studentDao.getAllStudents()).willReturn(Arrays.asList(student));
-        assertEquals(Arrays.asList(student), studentService.getAllStudents());
-    }
+    public void testGetAllStudents() {
+        Student student = new Student("John", "McClane", 1123, "123 St, Nyc");
+        List<Student> expected = Arrays.asList(student);
+        when(studentDao.getAllStudents()).thenReturn(expected);
 
+        List<Student> actual = studentService.getAllStudents();
+        assertEquals(expected, actual);
+    }
 }

@@ -20,4 +20,12 @@ public class StudentDao {
         return Arrays.asList(student);
     }
 
+    public static Student getStudent() {
+        return student;
+    }
+
+    public static void setStudent(Student student) {
+        StudentDao.student = student;
+    }
+
 }
