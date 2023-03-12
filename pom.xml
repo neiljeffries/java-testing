@@ -103,6 +103,8 @@
 			</plugin>
 
 			<plugin>
+				<!-- Setup: Run this cmd from project base dir one time only = "mv target/site/jacoco/jacoco.xml cov.xml" -->
+				<!-- To Use: Add the -Dcoverage flag like this = "mvn clean install -Dcoverage=true" -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>3.1.0</version>
@@ -111,10 +113,10 @@
 						<phase>verify</phase>
 						<configuration>
 							<target if="coverage">
-								<echo message="To run: mvn clean install -Dcoverage=true"/>
+								<echo>jacoco report path: ${project.basedir}\target\site\jacoco\index.html</echo>
 								<exec executable="cmd.exe" spawn="true">
 									<arg value="/c"/>
-									<arg value="${project.basedir}\scripts\scr.bat"/>
+									<arg value='start "" "${project.basedir}\target\site\jacoco\index.html"'/>
 								</exec>
 							</target>
 						</configuration>
